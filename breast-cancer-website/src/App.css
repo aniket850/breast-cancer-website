@@ -1,0 +1,1285 @@
+/* Base styling */
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  background: #f8f9fa;
+  color: #333;
+}
+
+/* Header styling */
+header {
+  background-color: #5719af;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+/* Navigation styling */
+nav ul {
+  list-style: none;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  transition: background 0.3s;
+}
+
+nav a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}
+
+/* Page and form styling */
+.page {
+  display: none;
+  padding: 2rem;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.page.active {
+  display: block;
+}
+
+form label {
+  display: block;
+  margin: 1rem 0;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+button {
+  background-color: #6200ea;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background-color: #3700b3;
+}
+
+/* Modal styling */
+.modals {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+
+}
+
+.info-section {
+  margin: 4rem 0;
+  padding: 2rem;
+  background: rgba(20, 20, 20, 0.8);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.info-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.info-section p,
+.info-section ul {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #5d25a6;
+  color: #fff;
+  width: 100%;
+  font-size: 1rem;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+  position: relative; /* Ensure it appears relative to the page */
+  z-index: 1; /* Bring it above other elements if overlapping */
+}
+
+
+footer a {
+  color: #f9b934; /* Accent color for links */
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 0.5rem;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #ffd75e; /* Slightly lighter shade on hover */
+}
+
+footer p {
+  margin: 0.5rem 0;
+}
+
+footer .social-icons {
+  margin-top: 1rem;
+}
+
+footer .social-icons img {
+  width: 50px; /* Icon size */
+  margin: 0 1rem;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+footer .social-icons img:hover {
+  transform: scale(1.2); /* Enlarge on hover */
+  opacity: 0.8; /* Slight transparency */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  footer {
+    padding: 1rem;
+    font-size: 0.9rem; /* Adjust font size for smaller screens */
+  }
+
+  footer .social-icons img {
+    width: 25px; /* Slightly smaller icons for mobile */
+  }
+}
+
+
+/* Error message styling */
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* Responsive form styling */
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: auto; /* Center the form */
+}
+
+/* Style for the submit button */
+button {
+  padding: 0.75rem;
+  background-color: #8b6cb4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-right: 8px;
+
+}
+
+button:hover {
+  background-color: #3700b3;
+}
+
+/* Suggestions list styling */
+.suggestions-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none; /* Initially hidden */
+}
+
+.suggestions-list li {
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.suggestions-list li:hover {
+    background-color: #f0f0f0;
+}
+
+/* Search container styling */
+.search-container {
+    position: relative;
+    margin: 1rem 0;
+}
+
+/* Show suggestions list when there are suggestions */
+.search-container .suggestions-list {
+    display: block;
+}
+
+/* Additional styles for the consultation form */
+#consultForm {
+    display: none; /* Initially hidden */
+}
+
+#consultForm.active {
+    display: block; /* Show when active */
+}
+
+/* Callback message styling */
+#callbackMessage {
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+/* Adjustments for mobile responsiveness */
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column; /* Stack navigation items */
+        gap: 0.5rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem; /* Adjust header size */
+    }
+
+    button {
+        width: 100%; /* Full-width buttons on mobile */
+    }
+}
+/* Text animation styles */
+.animated-text {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+}
+
+/* Keyframes for the animation */
+@keyframes fadeInUp {
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Add a delay for multiple elements */
+.animated-text:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.animated-text:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.empowering-text {
+  font-size: 3rem; /* Adjust the size as needed */
+  font-weight: 500; /* Optional: make it slightly bolder */
+  margin-top: 0.5rem; /* Optional: add some space above */
+}
+#video-consult {
+  background-image: url('https://i.postimg.cc/tCzwj7KM/pexels-karolina-grabowska-4021779.jpg');
+  background-size: cover; /* Ensures the image covers the entire section */
+  background-position: 50% 70%; /* Centers the image */
+  height: 100vh; /* Adjust height as needed */
+  color: rgb(0, 0, 0); /* Change text color for better visibility */
+}
+#homepage {
+  background-image: url('https://i.postimg.cc/k59WzC3q/piron-guillaume-U4-Fy-Cp3-Kz-Y-unsplash.jpg');
+  background-size: cover; /* Ensures the image covers the entire section */
+  background-position: center; /* Centers the image */
+  
+  color: white; /* Change text color for better visibility */
+}
+#predict {
+  background-image: url('https://i.postimg.cc/ncdDTWpw/national-cancer-institute-odgg-KTy-A5o0-unsplash.jpg');
+  background-size: cover; /* Ensures the image covers the entire section */
+  background-position: center; /* Centers the image */
+  height: 120vh; /* Adjust height as needed */
+  color: white; /* Change text color for better visibility */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+#about {
+  background-image: url('https://i.postimg.cc/tR204rHH/pexels-openrobin-2457183.jpg');
+  background-size: contain; /* Ensures the image covers the entire section */
+  background-position: center; /* Centers the image */
+  height: 250vh; /* Adjust height as needed */
+  color: rgb(255, 255, 255); /* Change text color for better visibility */
+}
+
+.video-consult {
+  text-align: center;
+  padding: 50px;
+}
+
+.header {
+  margin-bottom: 50px;
+}
+
+.animatedd-text {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.consult-now {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 26%;
+  height: 500px;
+  display: block;
+}
+
+.fade-in {
+  animation: fadeIn 1s forwards;
+}
+
+.sliding-text {
+  position: absolute;
+  bottom: 20px;
+  left: -100%;
+  transition: left 0.5s ease;
+}
+
+.slide-in {
+  left: 20px;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.App-header {
+  background-color: #282c34;
+  color: white;
+  padding: 20px;
+  font-size: 24px;
+}
+
+.features-section {
+  padding: 20px;
+}
+
+.features-section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.features-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.feature-card {
+  width: 2000px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.feature-cardd {
+  width: 250px;
+  background-color: #414141;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.feature-carddd {
+  width: 1400px;
+  background-color: #414141;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+.feature-cardd:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 30px rgb(255, 255, 255);
+}
+.feature-carddd:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 30px rgb(255, 255, 255);
+}
+
+
+.feature-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+.feature-cardd img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+.feature-carddd img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.feature-card h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+}
+.consult-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px; /* Adjust as needed */
+}
+
+.consult-now-button {
+  padding: 10px 20px;
+  background-color: #5940b3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.consult-now-button:hover {
+  background-color: #561cca;
+  transform: scale(1.05);
+}
+.vision-section, .mentor-section, .team-section {
+  margin: 2rem 0;
+  padding: 1rem;
+  background: #414141;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.vision-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.vision-image {
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.vision-text {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.team-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.team-member {
+  text-align: center;
+  max-width: 150px;
+}
+
+.team-member img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.team-member h4 {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+.animated-text, .vision-text {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.login-section, .user-section {
+  text-align: center;
+  margin: 2rem auto;
+}
+
+.login-button, .logout-button {
+  padding: 0.75rem 1.5rem;
+  background-color: #6200ea;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.login-button:hover, .logout-button:hover {
+  transform: scale(1.05);
+  background-color: #3700b3;
+}
+.avatar-container {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal base styling */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  z-index: 1000;
+  background: white;
+  width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.modal.open {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+.modal h2 {
+  margin: 0 0 10px;
+  text-align: center;
+}
+
+.modal label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+.modal input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.modal button {
+  width: 100%;
+  padding: 10px;
+  background-color: #6200ea;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s;
+
+}
+
+.modal button:hover {
+  transform: scale(1.05);
+  background-color: #3700b3;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+.lottie-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+#homepage {
+  position: relative;
+  background-image: url('https://i.postimg.cc/k59WzC3q/piron-guillaume-U4-Fy-Cp3-Kz-Y-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 135vh;
+  overflow: hidden;
+  color: white;
+}
+
+.animation-overlay {
+  position: absolute;
+  left: 750px;
+  width: 65%;
+  height: 40%;
+  pointer-events: none; /* Ensures animation does not block user interactions */
+}
+
+.animation-overlay > div {
+  width: 100%;
+  height: 100%;
+}
+.animations-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.animations-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.animations-overlay.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+.animationn-container {
+  position: absolute;
+  top: 30%;
+  left: 0;
+  width: 50%;
+  height: 50%;
+  z-index: 1; /* Place behind content */
+  pointer-events: none; /* Prevent interaction */
+  opacity: 70%;
+}
+.aniimationn-container {
+  position: absolute;
+  top: 70%;
+  left: 55%;
+  width: 40%;
+  height: 50%;
+  z-index: 1; /* Place behind content */
+  pointer-events: none; /* Prevent interaction */
+  opacity: 40%;
+}
+.predict-content {
+  position: relative;
+  z-index: 2; /* Place above animation */
+  padding: 2rem;
+  text-align: center;
+}
+/* Light Mode (Default) */
+body.light-mode {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+.dark-mode button {
+  background-color: #444;
+  color: #f0f0f0;
+}
+
+.dark-mode button:hover {
+  background-color: #222;
+}
+.dark-mode header {
+  background-color: #100223;
+  color: white;
+}
+.dark-mode footer {
+  background-color: #100223;
+  color: white;
+}
+.dark-mode .feature-card
+{
+  width: 2000px;
+  background-color: #4e4d4d;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.dark-mode .feature-card h3 {
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+.dark-mode .feature-card p {
+  font-size: 14px;
+  color: #ffffff;
+  line-height: 1.5;
+}
+.dark-mode #video-consult {
+  background-image: url('https://i.ibb.co/Dk0VPWd/pexels-karolina-grabowska-4021779-1.jpg');
+  background-size: cover; /* Ensures the image covers the entire section */
+  background-position: 50% 70%; /* Centers the image */
+  height: 100vh; /* Adjust height as needed */
+  color: rgb(188, 179, 179); /* Change text color for better visibility */
+} 
+.dark-mode #homepage {
+  background-image: url('https://i.postimg.cc/RVChsWtT/piron-guillaume-U4-Fy-Cp3-Kz-Y-unsplash.jpg');
+  background-size: cover; /* Ensures the image covers the entire section */
+  background-position: center; /* Centers the image */
+  
+  color: white; /* Change text color for better visibility */
+}
+.dark-mode #predict {
+  background-image: url('https://i.postimg.cc/MTYp6wRw/national-cancer-institute-odgg-KTy-A5o0-unsplash.jpg');
+  background-size: cover; /* Ensures the image covers the entire section */
+  background-position: center; /* Centers the image */
+  height: 120vh; /* Adjust height as needed */
+  color: white; /* Change text color for better visibility */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+.dark-mode .animationn-container {
+  position: absolute;
+  top: 30%;
+  left: 0;
+  width: 50%;
+  height: 50%;
+  z-index: 1; /* Place behind content */
+  pointer-events: none; /* Prevent interaction */
+  opacity: 40%;
+}
+.dark-mode .aniimationn-container {
+  position: absolute;
+  top: 70%;
+  left: 55%;
+  width: 40%;
+  height: 50%;
+  z-index: 1; /* Place behind content */
+  pointer-events: none; /* Prevent interaction */
+  opacity: 20%;
+}
+.dark-mode .vision-section {
+  margin: 2rem 0;
+  padding: 1rem;
+  background: #202020;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.dark-mode .feature-carddd {
+  width: 1400px;
+  background-color: #202020;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.dark-mode .feature-cardd {
+  width: 250px;
+  background-color: #202020;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.dark-mode #about {
+  background-image: url('https://i.postimg.cc/NLqVsBC4/pexels-openrobin-2457183-1.jpg');
+  background-size: contain; /* Ensures the image covers the entire section */
+  background-position: center; /* Centers the image */
+  height: 250vh; /* Adjust height as needed */
+  color: rgb(255, 255, 255); /* Change text color for better visibility */
+}
+.dashboard-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  padding: 1rem;
+  background-color: #6a3eab;
+  border-radius: 8px;
+}
+
+.dashboard-nav a {
+  text-decoration: none;
+  color: #fffcfc;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.dashboard-nav a:hover {
+  color: #3700b3;
+}
+.dark-mode .dashboard-nav ul {
+  background-color: #333;
+}
+.user-info-dropdown {
+  position: absolute; /* Position relative to the avatar */
+  top: 60px; /* Adjust based on avatar size */
+  right: 10px; /* Adjust to align with avatar */
+  background: white; /* Dropdown background color */
+  color: #333; /* Text color */
+  padding: 1rem;
+  border: 1px solid #ddd; /* Border for better visibility */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  z-index: 1000; /* Ensure it's on top of other content */
+}
+
+.user-info-dropdown p {
+  margin: 0.5rem 0;
+}
+
+.user-info-dropdown button {
+  margin-top: 1rem;
+  background-color: #6200ea;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.user-info-dropdown button:hover {
+  background-color: #3700b3;
+  transform: scale(1.05);
+}
+#medical-records ul {
+  list-style: none;
+  padding: 0;
+}
+
+#medical-records li {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#medical-records li h4 {
+  margin: 0;
+}
+
+#medical-records li button {
+  margin-left: 10px;
+}
+
+.modal.open {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+#consultations {
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#consultations ul {
+  list-style: none;
+  padding: 0;
+}
+
+#consultations li {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.dark-mode #consultations {
+  padding: 1rem;
+  background-color: #383b3c;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.animationnn-overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.animationnn-overlay p.error-message {
+  color: white;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+.success-message {
+  color: white;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+.modall-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modall {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  width: 400px;
+  text-align: center;
+}
+
+.modall button {
+  margin-top: 10px;
+}
+.account-settings-overlay {
+  position: absolute;
+  top: 420px;
+  left: 100px;
+  width: 30%;
+  height: 30%;
+  z-index: 0;
+}
+@keyframes heartbeat {
+  0% {
+      transform: scale(1);
+  }
+  30% {
+      transform: scale(1.1);
+  }
+  60% {
+      transform: scale(1);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+.review-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0; /* Start with invisible */
+  visibility: hidden; /* Hide initially */
+  transition: opacity 0.5s ease, visibility 0.5s ease; /* Smooth transition */
+}
+
+.review-overlay.show {
+  opacity: 1; /* Fully visible */
+  visibility: visible; /* Make it visible */
+}
+
+.review-box {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transform: scale(0.9); /* Start slightly smaller */
+  transition: transform 0.5s ease; /* Smooth scaling transition */
+  width: 100%;
+  max-width: 450px; /* Limiting width for better responsiveness */
+}
+
+.review-overlay.show .review-box {
+  transform: scale(1); /* Grow to normal size */
+}
+
+.review-box .input-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.review-box input,
+.review-box textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 30px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.review-box textarea {
+  resize: none;
+  height: 120px;
+}
+
+.review-box label {
+  font-size: 1.4rem;
+  color: #666;
+  position: absolute;
+  top: 20px;
+  left: 12px;
+  transition: all 0.3s ease;
+}
+
+.review-box input:focus,
+.review-box textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.review-box input:focus + label,
+.review-box textarea:focus + label,
+.review-box input:not(:placeholder-shown) + label,
+.review-box textarea:not(:placeholder-shown) + label {
+  top: -1px;
+  left: 12px;
+  font-size: 0.9rem;
+  color: #007bff;
+}
+
+.review-box button {
+  background: #007bff;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.review-box button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.review-box button:hover {
+  transform: scale(1.1);
+  background-color: #0056b3;
+}
+
+.review-box h3,
+.review-box form {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.review-overlay.show .review-box h3,
+.review-overlay.show .review-box form {
+  opacity: 1;
+}
+
+.star-rating {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.star {
+  font-size: 2rem;
+  cursor: pointer;
+  margin: 0 0.2rem;
+}
+
+.star.filled {
+  color: gold;
+}
+
+.star.empty {
+  color: #ccc;
+}
+/* Tooltip text */
+.rating-text {
+  font-size: 1rem;
+  color: #007bff;
+  margin-top: 10px;
+  bottom: 100px;
+}
+/* Fade-in animation for the review box */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+
+.review-success-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(63, 61, 61, 0.7); /* Black with 70% opacity */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Ensures it's on top of all other elements */
+}
+
+.review-success-content {
+  background: rgba(255, 255, 255, 0.7);
+  color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.review-success-content p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Optional: Add a fade-in effect */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: scale(0.9);
+  }
+  to {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+  color: #333;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  transition: color 0.3s ease;
+}
+
+.close-button:hover {
+  color: #007bff; /* Change color on hover */
+}
+
+.review-box {
+  position: relative; /* To position the close button */
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transform: scale(0.9); /* Start slightly smaller */
+  transition: transform 0.5s ease; /* Smooth scaling transition */
+}
+
+
+
+
+
+
+
